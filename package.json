@@ -1,0 +1,33 @@
+{
+  "name": "korean-dummy-json",
+  "version": "1.0.0",
+  "description": "한국어 더미 데이터 생성 라이브러리",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "esbuild": "^0.25.5",
+    "tsc-esm-fix": "^3.1.2",
+    "typescript": "^5.8.3"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "keywords": [
+    "korean",
+    "dummy",
+    "json",
+    "dummy-json",
+    "dummy-json-korean",
+    "korean-dummy-json"
+  ],
+  "author": "JongTae Nam",
+  "license": "MIT"
+}
