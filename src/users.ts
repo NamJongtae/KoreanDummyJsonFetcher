@@ -16,7 +16,9 @@ export async function getUsers(options?: {
   return fetcher<PaginatedResponse<User>>("/users", { params: options });
 }
 
-export async function createUser(data: User): Promise<ApiResponse<User>> {
+export async function createUser(
+  data: Omit<User, "id" | "createdAt">
+): Promise<ApiResponse<User>> {
   return fetcher<ApiResponse<User>>("/users", {
     method: "POST",
     body: data,
@@ -25,7 +27,7 @@ export async function createUser(data: User): Promise<ApiResponse<User>> {
 
 export async function patchUser(
   id: number,
-  data: Partial<Omit<User, "id">>
+  data: Partial<Omit<User, "id" | "createdAt">>
 ): Promise<ApiResponse<User>> {
   return fetcher<ApiResponse<User>>(`/users/${id}`, {
     method: "PATCH",
@@ -35,7 +37,7 @@ export async function patchUser(
 
 export async function putUser(
   id: number,
-  data: Omit<User, "id">
+  data: Omit<User, "id" | "createdAt">
 ): Promise<ApiResponse<User>> {
   return fetcher<ApiResponse<User>>(`/users/${id}`, {
     method: "PUT",

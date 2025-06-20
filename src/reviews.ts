@@ -18,7 +18,9 @@ export async function getReviews(options?: {
   return fetcher<PaginatedResponse<Review>>("/reviews", { params: options });
 }
 
-export async function createReview(data: Review): Promise<ApiResponse<Review>> {
+export async function createReview(
+  data: Omit<Review, "id" | "createdAt">
+): Promise<ApiResponse<Review>> {
   return fetcher<ApiResponse<Review>>("/reviews", {
     method: "POST",
     body: data,
@@ -27,7 +29,7 @@ export async function createReview(data: Review): Promise<ApiResponse<Review>> {
 
 export async function patchReview(
   id: number,
-  data: Partial<Omit<Review, "id" | "userId" | "bookId">>
+  data: Partial<Omit<Review, "id" | "userId" | "bookId" | "createdAt">>
 ): Promise<ApiResponse<Review>> {
   return fetcher<ApiResponse<Review>>(`/reviews/${id}`, {
     method: "PATCH",
@@ -37,7 +39,7 @@ export async function patchReview(
 
 export async function putReview(
   id: number,
-  data: Omit<Review, "id" | "userId" | "bookId">
+  data: Omit<Review, "id" | "userId" | "bookId" | "createdAt">
 ): Promise<ApiResponse<Review>> {
   return fetcher<ApiResponse<Review>>(`/reviews/${id}`, {
     method: "PUT",

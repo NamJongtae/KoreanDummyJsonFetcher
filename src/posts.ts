@@ -17,7 +17,9 @@ export async function getPosts(options?: {
   return fetcher<PaginatedResponse<Post>>("/posts", { params: options });
 }
 
-export async function createPost(data: Post): Promise<ApiResponse<Post>> {
+export async function createPost(
+  data: Omit<Post, "id" | "createdAt">
+): Promise<ApiResponse<Post>> {
   return fetcher<ApiResponse<Post>>("/posts", {
     method: "POST",
     body: data,
@@ -26,7 +28,7 @@ export async function createPost(data: Post): Promise<ApiResponse<Post>> {
 
 export async function patchPost(
   id: number,
-  data: Partial<Omit<Post, "id" | "userId">>
+  data: Partial<Omit<Post, "id" | "userId" | "createdAt">>
 ): Promise<ApiResponse<Post>> {
   return fetcher<ApiResponse<Post>>(`/posts/${id}`, {
     method: "PATCH",
@@ -36,7 +38,7 @@ export async function patchPost(
 
 export async function putPost(
   id: number,
-  data: Omit<Post, "id" | "userId">
+  data: Omit<Post, "id" | "userId" | "createdAt">
 ): Promise<ApiResponse<Post>> {
   return fetcher<ApiResponse<Post>>(`/posts/${id}`, {
     method: "PUT",

@@ -19,7 +19,7 @@ export async function getComments(options?: {
 }
 
 export async function createComment(
-  data: Comment
+  data: Omit<Comment, "id" | "createdAt">
 ): Promise<ApiResponse<Comment>> {
   return fetcher<ApiResponse<Comment>>("/comments", {
     method: "POST",
@@ -29,7 +29,7 @@ export async function createComment(
 
 export async function patchComment(
   id: number,
-  data: Partial<Omit<Comment, "id" | "userId" | "postId">>
+  data: Partial<Omit<Comment, "id" | "userId" | "postId" | "createdAt">>
 ): Promise<ApiResponse<Comment>> {
   return fetcher<ApiResponse<Comment>>(`/comments/${id}`, {
     method: "PATCH",
@@ -39,7 +39,7 @@ export async function patchComment(
 
 export async function putComment(
   id: number,
-  data: Omit<Comment, "id" | "userId" | "postId">
+  data: Omit<Comment, "id" | "userId" | "postId" | "createdAt">
 ): Promise<ApiResponse<Comment>> {
   return fetcher<ApiResponse<Comment>>(`/comments/${id}`, {
     method: "PUT",

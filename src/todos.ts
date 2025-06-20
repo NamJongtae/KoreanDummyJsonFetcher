@@ -17,7 +17,9 @@ export async function getTodos(options?: {
   return fetcher<PaginatedResponse<Todo>>("/todos", { params: options });
 }
 
-export async function createTodo(data: Todo): Promise<ApiResponse<Todo>> {
+export async function createTodo(
+  data: Omit<Todo, "id">
+): Promise<ApiResponse<Todo>> {
   return fetcher<ApiResponse<Todo>>("/todos", {
     method: "POST",
     body: data,

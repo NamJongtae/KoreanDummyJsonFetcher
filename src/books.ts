@@ -16,7 +16,9 @@ export async function getBooks(options?: {
   return fetcher<PaginatedResponse<Book>>("/books", { params: options });
 }
 
-export async function createBook(data: Book): Promise<ApiResponse<Book>> {
+export async function createBook(
+  data: Omit<Book, "id" | "createdAt">
+): Promise<ApiResponse<Book>> {
   return fetcher<ApiResponse<Book>>("/books", {
     method: "POST",
     body: data,
@@ -25,7 +27,7 @@ export async function createBook(data: Book): Promise<ApiResponse<Book>> {
 
 export async function patchBook(
   id: number,
-  data: Partial<Omit<Book, "id">>
+  data: Partial<Omit<Book, "id" | "createdAt">>
 ): Promise<ApiResponse<Book>> {
   return fetcher<ApiResponse<Book>>(`/books/${id}`, {
     method: "PATCH",
@@ -35,7 +37,7 @@ export async function patchBook(
 
 export async function putBook(
   id: number,
-  data: Omit<Book, "id">
+  data: Omit<Book, "id" | "createdAt">
 ): Promise<ApiResponse<Book>> {
   return fetcher<ApiResponse<Book>>(`/books/${id}`, {
     method: "PUT",
