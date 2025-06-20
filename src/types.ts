@@ -4,6 +4,7 @@ export interface User {
   email: string;
   phone: string;
   address: string;
+  createdAt: string;
 }
 
 export interface Todo {
@@ -19,6 +20,7 @@ export interface Post {
   title: string;
   content: string;
   imgUrl: string;
+  createdAt: string;
 }
 
 export interface Comment {
@@ -26,6 +28,7 @@ export interface Comment {
   postId: number;
   userId?: number;
   content: string;
+  createdAt: string;
 }
 
 export interface Book {
@@ -43,12 +46,12 @@ export interface Review {
   bookId: number;
   rating: number;
   content: string;
+  createdAt: string;
 }
 
 export interface AuthUser {
   userId: string;
   username?: string;
-  email?: string;
 }
 
 export interface ApiResponse<T> {
