@@ -5,8 +5,8 @@ export async function getReview({
   id,
 }: {
   id: number;
-}): Promise<ApiResponse<Review>> {
-  return fetcher<ApiResponse<Review>>(`/reviews/${id}`);
+}): Promise<ApiResponse<Review, "review">> {
+  return fetcher<ApiResponse<Review, "review">>(`/reviews/${id}`);
 }
 
 export async function getReviews(options?: {
@@ -14,14 +14,14 @@ export async function getReviews(options?: {
   userId?: number;
   limit?: number;
   page?: number;
-}): Promise<PaginatedResponse<Review>> {
-  return fetcher<PaginatedResponse<Review>>("/reviews", { params: options });
+}): Promise<PaginatedResponse<Review, "reviews">> {
+  return fetcher<PaginatedResponse<Review, "reviews">>("/reviews", { params: options });
 }
 
 export async function createReview(
   data: Omit<Review, "id" | "createdAt">
-): Promise<ApiResponse<Review>> {
-  return fetcher<ApiResponse<Review>>("/reviews", {
+): Promise<ApiResponse<Review, "review">> {
+  return fetcher<ApiResponse<Review, "review">>("/reviews", {
     method: "POST",
     body: data,
   });
@@ -30,8 +30,8 @@ export async function createReview(
 export async function patchReview(
   id: number,
   data: Partial<Omit<Review, "id" | "userId" | "bookId" | "createdAt">>
-): Promise<ApiResponse<Review>> {
-  return fetcher<ApiResponse<Review>>(`/reviews/${id}`, {
+): Promise<ApiResponse<Review, "review">> {
+  return fetcher<ApiResponse<Review, "review">>(`/reviews/${id}`, {
     method: "PATCH",
     body: data,
   });
@@ -40,15 +40,15 @@ export async function patchReview(
 export async function putReview(
   id: number,
   data: Omit<Review, "id" | "userId" | "bookId" | "createdAt">
-): Promise<ApiResponse<Review>> {
-  return fetcher<ApiResponse<Review>>(`/reviews/${id}`, {
+): Promise<ApiResponse<Review, "review">> {
+  return fetcher<ApiResponse<Review, "review">>(`/reviews/${id}`, {
     method: "PUT",
     body: data,
   });
 }
 
-export async function deleteReview(id: number): Promise<ApiResponse<null>> {
-  return fetcher<ApiResponse<null>>(`/reviews/${id}`, {
+export async function deleteReview(id: number): Promise<{ message: string }> {
+  return fetcher<{ message: string }>(`/reviews/${id}`, {
     method: "DELETE",
   });
 }

@@ -5,21 +5,21 @@ export async function getUser({
   id,
 }: {
   id: number;
-}): Promise<ApiResponse<User>> {
-  return fetcher<ApiResponse<User>>(`/users/${id}`);
+}): Promise<ApiResponse<User, "user">> {
+  return fetcher<ApiResponse<User, "user">>(`/users/${id}`);
 }
 
 export async function getUsers(options?: {
   limit?: number;
   page?: number;
-}): Promise<PaginatedResponse<User>> {
-  return fetcher<PaginatedResponse<User>>("/users", { params: options });
+}): Promise<PaginatedResponse<User, "users">> {
+  return fetcher<PaginatedResponse<User, "users">>("/users", { params: options });
 }
 
 export async function createUser(
   data: Omit<User, "id" | "createdAt">
-): Promise<ApiResponse<User>> {
-  return fetcher<ApiResponse<User>>("/users", {
+): Promise<ApiResponse<User, "user">> {
+  return fetcher<ApiResponse<User, "user">>("/users", {
     method: "POST",
     body: data,
   });
@@ -28,8 +28,8 @@ export async function createUser(
 export async function patchUser(
   id: number,
   data: Partial<Omit<User, "id" | "createdAt">>
-): Promise<ApiResponse<User>> {
-  return fetcher<ApiResponse<User>>(`/users/${id}`, {
+): Promise<ApiResponse<User, "user">> {
+  return fetcher<ApiResponse<User, "user">>(`/users/${id}`, {
     method: "PATCH",
     body: data,
   });
@@ -38,15 +38,15 @@ export async function patchUser(
 export async function putUser(
   id: number,
   data: Omit<User, "id" | "createdAt">
-): Promise<ApiResponse<User>> {
-  return fetcher<ApiResponse<User>>(`/users/${id}`, {
+): Promise<ApiResponse<User, "user">> {
+  return fetcher<ApiResponse<User, "user">>(`/users/${id}`, {
     method: "PUT",
     body: data,
   });
 }
 
-export async function deleteUser(id: number): Promise<ApiResponse<null>> {
-  return fetcher<ApiResponse<null>>(`/users/${id}`, {
+export async function deleteUser(id: number): Promise<{ message: string }> {
+  return fetcher<{ message: string }>(`/users/${id}`, {
     method: "DELETE",
   });
 }
