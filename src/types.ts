@@ -1,4 +1,4 @@
-export interface User {
+export interface User { 
   id: number;
   username: string;
   email: string;
@@ -16,7 +16,7 @@ export interface Todo {
 
 export interface Post {
   id: number;
-  userId?: number;
+  userId: number;
   title: string;
   content: string;
   imgUrl: string;
@@ -26,7 +26,7 @@ export interface Post {
 export interface Comment {
   id: number;
   postId: number;
-  userId?: number;
+  userId: number;
   content: string;
   createdAt: string;
 }
@@ -48,21 +48,30 @@ export interface Review {
   content: string;
   createdAt: string;
 }
-
 export interface AuthUser {
   userId: string;
-  username?: string;
 }
 
-export interface ApiResponse<T> {
-  message: string;
-  data: T;
+export interface Login {
+  accessToken: string;
+  refreshToken: string;
 }
 
-export interface PaginatedResponse<T> {
+export interface RefreshAccessToken {
+  accessToken: string;
+}
+
+export type ApiResponse<T, K extends string> = {
   message: string;
-  data: T[];
+} & {
+  [key in K]: T;
+};
+
+export type PaginatedResponse<T, K extends string> = {
+  message: string;
   page: number;
   limit: number;
   hasNextPage: boolean;
-}
+} & {
+  [key in K]: T[];
+};
