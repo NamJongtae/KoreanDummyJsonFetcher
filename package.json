@@ -37,7 +37,11 @@
     "json",
     "dummy-json",
     "dummy-json-korean",
-    "korean-dummy-json"
+    "korean-dummy-json",
+    "한국어",
+    "한글",
+    "더미",
+    "더미데이터"
   ],
   "author": "JongTae Nam",
   "license": "MIT"
