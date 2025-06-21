@@ -10,6 +10,7 @@
 </div>
 
 [koreanDummyJSON](https://github.com/NamJongtae/koreanDummyJSON) 프로젝트를 기반으로 만들어졌으며, 직접 비동기 API 호출 작업 없이 바로 더미 데이터를 가져올 수 있습니다.  
+
 **단순 데이터 조회뿐 아니라, PATCH, PUT, POST, DELETE 등 CRUD API도 모두 지원**하여 실제 REST API와 유사하게 테스트 및 개발에 활용할 수 있습니다.
 
 자세한 API별 사용법은 [DOCS](https://www.koreandummyjson.site/docs/users)를 참고해주세요.
@@ -25,11 +26,19 @@
 - ESM/CJS를 모두 지원합니다.
 - **비동기 fetch 작업 없이 바로 더미 데이터 반환합니다.**
 
-> 📌 참고:
-> PATCH, PUT, POST, DELETE 모든 API는 실제 내부 더미 데이터를 영구적으로 변경하지 않습니다.
->
-> 요청 시, 입력값이 반영된 것처럼 보이는 결과만 반환하며,
-> 다음 요청 시에는 원래의 더미 데이터가 그대로 유지됩니다.
+<br/>
+
+<table>
+  <tr>
+    <td>
+      <p><strong>📌 참고사항</strong></p>
+      <p>
+        이 라이브러리의 <code>PATCH</code>, <code>PUT</code>, <code>POST</code>, <code>DELETE</code> API는 서버의 데이터를 영구적으로 변경하지 않습니다. <br/> 
+        <strong>요청에 대한 성공적인 모의(mock) 응답을 반환할 뿐, 실제 데이터는 원래 상태 그대로 유지됩니다.</strong>
+      </p>
+    </td>
+  </tr>
+</table>
 
 ## Resources
 
