@@ -7,6 +7,11 @@
   "types": "dist/types/index.d.ts",
   "unpkg": "dist/index.min.js",
   "jsdelivr": "dist/index.min.js",
+  "homepage": "https://koreandummyjson.site",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NamJongtae/KoreanDuumyJsonLibrary.git"
+  },
   "files": [
     "dist"
   ],
