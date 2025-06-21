@@ -61,6 +61,19 @@
 npm install korean-dummy-json
 ```
 
+## CDN
+
+### unpkg
+```html
+<script src="https://cdn.unpkg.com/npm/korean-dummy-json@1.0.0"></script>
+```
+
+### jsdelivr
+```html
+<script src="https://cdn.jsdelivr.net/npm/korean-dummy-json@1.0.0"></script>
+```
+
+
 ## Usage
 
 ### Users
