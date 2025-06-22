@@ -1,6 +1,6 @@
 {
   "name": "korean-dummy-json-fetcher",
-  "version": "1.0.3", 
+  "version": "1.0.4",
   "description": "한국어 더미 데이터 생성 라이브러리",
   "keywords": [
     "korean",
@@ -41,10 +41,10 @@
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:esm": "tsc -p tsconfig.esm.json",
     "move:cjs": "mv dist/cjs/index.js dist/index.cjs",
-    "build:min": "esbuild dist/index.js --minify --outfile=dist/index.min.js",
+    "build:min": "esbuild dist/esm/index.js --bundle --minify --format=iife --global-name=koreanDummyJsonFetcher --outfile=dist/index.min.js",
     "move:esm": "mv dist/esm/index.js dist/index.js",
     "fix:index-paths": "node fix-index-paths.js",
-    "build": "npm run build:cjs && npm run build:esm && npm run move:cjs && tsc-esm-fix dist && npm run move:esm && npm run build:min && npm run fix:index-paths"
+    "build": "npm run build:cjs && npm run build:esm && tsc-esm-fix dist && npm run build:min && npm run move:cjs && npm run move:esm && npm run fix:index-paths"
   },
   "devDependencies": {
     "esbuild": "^0.25.5",
