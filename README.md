@@ -1,11 +1,11 @@
-# korean-dummy-json
+# Korean Dummy Json Fether
 
 <div align="center">
    <a href="https://koreandummyjson.site"><img src="https://koreandummyjson.site/icons/logo-icon.svg" /></a><br>
 
-[![npm version](https://img.shields.io/npm/v/korean-dummy-json?style=flat)](https://www.npmjs.com/package/korean-dummy-json)
-[![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=korean-dummy-json&query=$.install.pretty&label=install%20size&style=flat)](https://packagephobia.com/result?p=korean-dummy-json)
-[![npm downloads](https://img.shields.io/npm/dt/korean-dummy-json.svg?style=flat)](https://npm-stat.com/charts.html?package=korean-dummy-json)
+[![npm version](https://img.shields.io/npm/v/korean-dummy-json-fetcher?style=flat)](https://www.npmjs.com/package/korean-dummy-json-fetcher)
+[![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=korean-dummy-json-fetcher&query=$.install.pretty&label=install%20size&style=flat)](https://packagephobia.com/result?p=korean-dummy-json-fetcher)
+[![npm downloads](https://img.shields.io/npm/dt/korean-dummy-json-fetcher.svg?style=flat)](https://npm-stat.com/charts.html?package=korean-dummy-json-fetcher)
 
 </div>
 
@@ -65,12 +65,12 @@ npm install korean-dummy-json
 
 ### unpkg
 ```html
-<script src="https://cdn.unpkg.com/npm/korean-dummy-json@1.0.0"></script>
+<script src="https://cdn.unpkg.com/npm/korean-dummy-json-fetcher@1.0.0"></script>
 ```
 
 ### jsdelivr
 ```html
-<script src="https://cdn.jsdelivr.net/npm/korean-dummy-json@1.0.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/korean-dummy-json-fetcher@1.0.0"></script>
 ```
 
 
