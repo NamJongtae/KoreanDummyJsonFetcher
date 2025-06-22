@@ -1,4 +1,4 @@
-# Korean Dummy Json Fetcher 
+# Korean Dummy Json Fetcher
 
 <div align="center">
    <a href="https://koreandummyjson.site"><img src="https://koreandummyjson.site/icons/logo-icon.svg" /></a><br>
@@ -9,7 +9,7 @@
 
 </div>
 
-[koreanDummyJSON](https://github.com/NamJongtae/koreanDummyJSON) 프로젝트를 기반으로 만들어졌으며, 직접 비동기 API 호출 작업 없이 바로 더미 데이터를 가져올 수 있습니다.  
+[koreanDummyJSON](https://github.com/NamJongtae/koreanDummyJSON) 프로젝트를 기반으로 만들어졌으며, 직접 비동기 API 호출 작업 없이 바로 더미 데이터를 가져올 수 있습니다.
 
 **단순 데이터 조회뿐 아니라, PATCH, PUT, POST, DELETE 등 CRUD API도 모두 지원**하여 실제 REST API와 유사하게 테스트 및 개발에 활용할 수 있습니다.
 
@@ -44,8 +44,8 @@
 
 아래 8개의 리소스를 제공합니다.
 
-| Resource  | Information         |
-| --------- | ------------------- |
+| Resource | Information         |
+| -------- | ------------------- |
 | users    | 유저 20명           |
 | posts    | 게시물 100개        |
 | comments | 댓글 500개          |
@@ -64,15 +64,16 @@ npm install korean-dummy-json-fetcher
 ## CDN
 
 ### unpkg
+
 ```html
-<script src="https://cdn.unpkg.com/npm/korean-dummy-json-fetcher@1.0.2"></script>
+<script src="https://cdn.unpkg.com/npm/korean-dummy-json-fetcher@v1.0.5/dist/index.min.js"></script>
 ```
 
 ### jsdelivr
-```html
-<script src="https://cdn.jsdelivr.net/npm/korean-dummy-json-fetcher@1.0.2"></script>
-```
 
+```html
+<script src="https://unpkg.com/korean-dummy-json-fetcher@1.0.5/dist/index.min.js"></script>
+```
 
 ## Usage
 
@@ -255,8 +256,8 @@ import {
   deleteComment,
 } from "korean-dummy-json-fetcher";
 
-async function fetchComments () {
-    // 전체 댓글 목록 가져오기
+async function fetchComments() {
+  // 전체 댓글 목록 가져오기
   const comments = await getComments();
   console.log(comments);
 
@@ -280,7 +281,7 @@ async function fetchComments () {
   const createCommentResult = await createComment({
     userId: 1,
     postId: 1,
-    content: "새로운 댓글"
+    content: "새로운 댓글",
   });
   console.log(createCommentResult);
 
@@ -299,7 +300,7 @@ async function fetchComments () {
   console.log(deleteCommentResult);
 }
 
-fetchComments()
+fetchComments();
 ```
 
 ### Books
@@ -313,7 +314,7 @@ import {
   deleteBook,
 } from "korean-dummy-json-fetcher";
 
-async function fetchBooks () {
+async function fetchBooks() {
   // 전체 책 목록 가져오기
   const books = await getBooks();
   console.log(books);
@@ -421,7 +422,11 @@ fetchReviews();
 ### Auth
 
 ```ts
-import { login, getAuthUser, refreshAccessToken } from "korean-dummy-json-fetcher";
+import {
+  login,
+  getAuthUser,
+  refreshAccessToken,
+} from "korean-dummy-json-fetcher";
 
 async function fetchAuth() {
   // 로그인
@@ -476,7 +481,7 @@ console.log(image);
 ### Todos
 
 - `getTodo({ id })` : 특정 할 일 정보 반환
-- `getTodos({ userId })` : 특정 유저 할 일 목록 반환 
+- `getTodos({ userId })` : 특정 유저 할 일 목록 반환
 - `getTodos()` : 유저 전체 목록 반환
 - `getTodos({ limit, page })` : 할 일 목록 페이지네이션 반환
 - `createTodo(data)` : 할 일 생성
