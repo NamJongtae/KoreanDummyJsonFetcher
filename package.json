@@ -1,6 +1,6 @@
 {
   "name": "korean-dummy-json-fetcher",
-  "version": "1.0.1",
+  "version": "1.0.2", 
   "description": "한국어 더미 데이터 생성 라이브러리",
   "keywords": [
     "korean",
@@ -19,7 +19,7 @@
   "homepage": "https://koreandummyjson.site",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NamJongtae/KoreanDuumyJsonFetcher.git"
+    "url": "git+https://github.com/NamJongtae/KoreanDummyJsonFetcher.git"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
