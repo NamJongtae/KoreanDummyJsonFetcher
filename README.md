@@ -1,4 +1,4 @@
-# Korean Dummy Json Fether
+# Korean Dummy Json Fetcher 
 
 <div align="center">
    <a href="https://koreandummyjson.site"><img src="https://koreandummyjson.site/icons/logo-icon.svg" /></a><br>
@@ -85,7 +85,7 @@ import {
   patchUser,
   putUser,
   deleteUser,
-} from "korean-dummy-json";
+} from "korean-dummy-json-fetcher";
 
 async function fetchUsers() {
   // 전체 유저 목록 가져오기
@@ -139,7 +139,7 @@ import {
   patchTodo,
   putTodo,
   deleteTodo,
-} from "korean-dummy-json";
+} from "korean-dummy-json-fetcher";
 
 async function fetchTodos() {
   // 전체 할 일 목록 가져오기
@@ -196,7 +196,7 @@ import {
   patchPost,
   putPost,
   deletePost,
-} from "korean-dummy-json";
+} from "korean-dummy-json-fetcher";
 
 async function fetchPosts() {
   // 전체 게시글 목록 가져오기
@@ -253,7 +253,7 @@ import {
   patchComment,
   putComment,
   deleteComment,
-} from "korean-dummy-json";
+} from "korean-dummy-json-fetcher";
 
 async function fetchComments () {
     // 전체 댓글 목록 가져오기
@@ -311,7 +311,7 @@ import {
   patchBook,
   putBook,
   deleteBook,
-} from "korean-dummy-json";
+} from "korean-dummy-json-fetcher";
 
 async function fetchBooks () {
   // 전체 책 목록 가져오기
@@ -367,7 +367,7 @@ import {
   patchReview,
   putReview,
   deleteReview,
-} from "korean-dummy-json";
+} from "korean-dummy-json-fetcher";
 
 async function fetchReviews() {
   // 전체 책 리뷰 목록 가져오기
@@ -421,7 +421,7 @@ fetchReviews();
 ### Auth
 
 ```ts
-import { login, getAuthUser, refreshAccessToken } from "korean-dummy-json";
+import { login, getAuthUser, refreshAccessToken } from "korean-dummy-json-fetcher";
 
 async function fetchAuth() {
   // 로그인
@@ -448,7 +448,7 @@ fetchAuth();
 ### Image
 
 ```ts
-import { getImage } from "korean-dummy-json";
+import { getImage } from "korean-dummy-json-fetcher";
 
 // 동적 이미지 데이터 가져오기
 const image = getImage({
@@ -471,7 +471,7 @@ console.log(image);
 - `createUser(data)` : 유저 생성
 - `patchUser(id, data)` : 유저 일부 수정
 - `putUser(id, data)` : 유저 전체 수정
-- `deleteUser(id)` : 유저 삭제
+- `deleteUser({ id })` : 유저 삭제
 
 ### Todos
 
@@ -482,7 +482,7 @@ console.log(image);
 - `createTodo(data)` : 할 일 생성
 - `patchTodo(id, data)` : 할 일 일부 수정
 - `putTodo(id, data)` : 할 일 전체 수정
-- `deleteTodo(id)` : 할 일 삭제
+- `deleteTodo({ id })` : 할 일 삭제
 
 ### Posts
 
@@ -493,7 +493,7 @@ console.log(image);
 - `createPost(data)` : 게시글 생성
 - `patchPost(id, data)` : 게시글 일부 수정
 - `putPost(id, data)` : 게시글 전체 수정
-- `deletePost(id)` : 게시글 삭제
+- `deletePost({ id })` : 게시글 삭제
 
 ### Comments
 
@@ -505,7 +505,7 @@ console.log(image);
 - `createComment(data)` : 댓글 생성
 - `patchComment(id, data)` : 댓글 일부 수정
 - `putComment(id, data)` : 댓글 전체 수정
-- `deleteComment(id)` : 댓글 삭제
+- `deleteComment({ id })` : 댓글 삭제
 
 ### Books
 
@@ -515,7 +515,7 @@ console.log(image);
 - `createBook(data)` : 책 생성
 - `patchBook(id, data)` : 책 일부 수정
 - `putBook(id, data)` : 책 전체 수정
-- `deleteBook(id)` : 책 삭제
+- `deleteBook({ id })` : 책 삭제
 
 ### Reviews
 
@@ -527,7 +527,7 @@ console.log(image);
 - `createReview(data)` : 리뷰 생성
 - `patchReview(id, data)` : 리뷰 일부 수정
 - `putReview(id, data)` : 리뷰 전체 수정
-- `deleteReview(id)` : 리뷰 삭제
+- `deleteReview({ id })` : 리뷰 삭제
 
 ### Auth
 
