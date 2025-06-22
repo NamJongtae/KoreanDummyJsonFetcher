@@ -16,7 +16,6 @@ export async function fetcher<T>(
     params?: Record<string, any>;
     body?: any;
     headers?: Record<string, string>;
-    responseType?: "json" | "blob";
   }
 ): Promise<T> {
   const {
@@ -24,7 +23,6 @@ export async function fetcher<T>(
     params,
     body,
     headers,
-    responseType = "json",
   } = options || {};
   const url = `${BASE_URL}${endpoint}${buildQuery(params)}`;
   const res = await fetch(url, {
@@ -38,6 +36,5 @@ export async function fetcher<T>(
   if (!res.ok) {
     throw new Error(`API 요청 실패: ${res.status} ${res.statusText}`);
   }
-  if (responseType === "blob") return res.blob() as any;
   return res.json();
 }
