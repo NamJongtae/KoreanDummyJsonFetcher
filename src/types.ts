@@ -1,4 +1,4 @@
-export interface User { 
+export interface User {
   id: number;
   username: string;
   email: string;
@@ -61,7 +61,7 @@ export interface RefreshAccessToken {
   accessToken: string;
 }
 
-export type ApiResponse<T, K extends string> = {
+export type ApiResponse<T = void, K extends string = never> = {
   message: string;
 } & {
   [key in K]: T;
