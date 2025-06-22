@@ -47,8 +47,8 @@ export async function putComment(
   });
 }
 
-export async function deleteComment(id: number): Promise<{ message: string }> {
-  return fetcher<{ message: string }>(`/comments/${id}`, {
+export async function deleteComment({ id }: { id: number }): Promise<ApiResponse> {
+  return fetcher<ApiResponse>(`/comments/${id}`, {
     method: "DELETE",
   });
 }

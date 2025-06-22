@@ -45,8 +45,8 @@ export async function putBook(
   });
 }
 
-export async function deleteBook(id: number): Promise<{ message: string }> {
-  return fetcher<{ message: string }>(`/books/${id}`, {
+export async function deleteBook({ id }: { id: number }): Promise<ApiResponse> {
+  return fetcher<ApiResponse>(`/books/${id}`, {
     method: "DELETE",
   });
 }

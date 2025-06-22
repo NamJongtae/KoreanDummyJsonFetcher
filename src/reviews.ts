@@ -15,7 +15,9 @@ export async function getReviews(options?: {
   limit?: number;
   page?: number;
 }): Promise<PaginatedResponse<Review, "reviews">> {
-  return fetcher<PaginatedResponse<Review, "reviews">>("/reviews", { params: options });
+  return fetcher<PaginatedResponse<Review, "reviews">>("/reviews", {
+    params: options,
+  });
 }
 
 export async function createReview(
@@ -47,8 +49,8 @@ export async function putReview(
   });
 }
 
-export async function deleteReview(id: number): Promise<{ message: string }> {
-  return fetcher<{ message: string }>(`/reviews/${id}`, {
+export async function deleteReview({ id }: { id: number }): Promise<ApiResponse> {
+  return fetcher<ApiResponse>(`/reviews/${id}`, {
     method: "DELETE",
   });
 }

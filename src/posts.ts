@@ -46,8 +46,8 @@ export async function putPost(
   });
 }
 
-export async function deletePost(id: number): Promise<{ message: string }> {
-  return fetcher<{ message: string }>(`/posts/${id}`, {
+export async function deletePost({ id }: { id: number }): Promise<ApiResponse> {
+  return fetcher<ApiResponse>(`/posts/${id}`, {
     method: "DELETE",
   });
 }

@@ -13,7 +13,9 @@ export async function getUsers(options?: {
   limit?: number;
   page?: number;
 }): Promise<PaginatedResponse<User, "users">> {
-  return fetcher<PaginatedResponse<User, "users">>("/users", { params: options });
+  return fetcher<PaginatedResponse<User, "users">>("/users", {
+    params: options,
+  });
 }
 
 export async function createUser(
@@ -45,8 +47,8 @@ export async function putUser(
   });
 }
 
-export async function deleteUser(id: number): Promise<{ message: string }> {
-  return fetcher<{ message: string }>(`/users/${id}`, {
+export async function deleteUser({ id }: { id: number }): Promise<ApiResponse> {
+  return fetcher<ApiResponse>(`/users/${id}`, {
     method: "DELETE",
   });
 }

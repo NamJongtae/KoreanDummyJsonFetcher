@@ -48,10 +48,8 @@ export async function putTodo(
   });
 }
 
-export async function deleteTodo(
-  id: number
-): Promise<{ message: string }> {
-  return fetcher<{ message: string }>(`/todos/${id}`, {
+export async function deleteTodo({ id }: { id: number }): Promise<ApiResponse> {
+  return fetcher<ApiResponse>(`/todos/${id}`, {
     method: "DELETE",
   });
 }
