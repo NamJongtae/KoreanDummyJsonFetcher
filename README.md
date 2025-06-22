@@ -65,12 +65,12 @@ npm install korean-dummy-json-fetcher
 
 ### unpkg
 ```html
-<script src="https://cdn.unpkg.com/npm/korean-dummy-json-fetcher@1.0.0"></script>
+<script src="https://cdn.unpkg.com/npm/korean-dummy-json-fetcher@1.0.2"></script>
 ```
 
 ### jsdelivr
 ```html
-<script src="https://cdn.jsdelivr.net/npm/korean-dummy-json-fetcher@1.0.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/korean-dummy-json-fetcher@1.0.2"></script>
 ```
 
 
