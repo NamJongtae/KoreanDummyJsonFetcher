@@ -55,10 +55,10 @@
 | auth     | 로그인 및 인증/인가 |
 | image    | 동적 이미지 생성    |
 
-## Installation
+## Installing
 
 ```bash
-npm install korean-dummy-json
+npm install korean-dummy-json-fetcher
 ```
 
 ## CDN
