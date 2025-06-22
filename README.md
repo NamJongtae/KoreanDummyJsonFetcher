@@ -123,7 +123,7 @@ async function fetchUsers() {
   console.log(putResult);
 
   // 유저 삭제
-  const deleteResult = await deleteUser(1);
+  const deleteResult = await deleteUser({ id: 1 });
   console.log(deleteResult);
 }
 
@@ -180,7 +180,7 @@ async function fetchTodos() {
   console.log(putTodoResult);
 
   // 할 일 삭제
-  const deleteTodoResult = await deleteTodo(1);
+  const deleteTodoResult = await deleteTodo({ id: 1 });
   console.log(deleteTodoResult);
 }
 
@@ -237,7 +237,7 @@ async function fetchPosts() {
   console.log(putPostResult);
 
   // 게시글 삭제
-  const deletePostResult = await deletePost(1);
+  const deletePostResult = await deletePost({ id: 1 });
   console.log(deletePostResult);
 }
 
@@ -295,7 +295,7 @@ async function fetchComments () {
   console.log(putCommentResult);
 
   // 댓글 삭제
-  const deleteCommentResult = await deleteComment(1);
+  const deleteCommentResult = await deleteComment({ id: 1 });
   console.log(deleteCommentResult);
 }
 
@@ -351,7 +351,7 @@ async function fetchBooks () {
   console.log(putBookResult);
 
   // 책 삭제
-  const deleteBookResult = await deleteBook(1);
+  const deleteBookResult = await deleteBook({ id: 1 });
   console.log(deleteBookResult);
 }
 
@@ -411,7 +411,7 @@ async function fetchReviews() {
   console.log(putResult);
 
   // 리뷰 삭제
-  const deleteResult = await deleteReview(1);
+  const deleteResult = await deleteReview({ id: 1 });
   console.log(deleteResult);
 }
 
@@ -605,7 +605,7 @@ export interface RefreshAccessToken {
   accessToken: string;
 }
 
-export type ApiResponse<T, K extends string> = {
+export type ApiResponse<T = void, K extends string = never> = {
   message: string;
 } & {
   [key in K]: T;
