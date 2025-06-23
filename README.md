@@ -1,4 +1,4 @@
-# Korean Dummy Json Fetcher
+# Korean Dummy JSON Fetcher
 
 <div align="center">
    <a href="https://koreandummyjson.site"><img src="https://koreandummyjson.site/icons/logo-icon.svg" /></a><br>
@@ -66,13 +66,13 @@ npm install korean-dummy-json-fetcher
 ### unpkg
 
 ```html
-<script src="https://unpkg.com/korean-dummy-json-fetcher@1.0.6/dist/index.min.js"></script>
+<script src="https://unpkg.com/korean-dummy-json-fetcher@1.0.7/dist/index.min.js"></script>
 ```
 
 ### jsdelivr
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/korean-dummy-json-fetcher@1.0.6/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/korean-dummy-json-fetcher@1.0.7/dist/index.min.js"></script>
 ```
 
 ## Usage
@@ -83,6 +83,7 @@ npm install korean-dummy-json-fetcher
 import {
   getUsers,
   getUser,
+  createUser,
   patchUser,
   putUser,
   deleteUser,
@@ -137,6 +138,7 @@ fetchUsers();
 import {
   getTodos,
   getTodo,
+  createTodo,
   patchTodo,
   putTodo,
   deleteTodo,
@@ -194,6 +196,7 @@ fetchTodos();
 import {
   getPosts,
   getPost,
+  createPost,
   patchPost,
   putPost,
   deletePost,
@@ -251,6 +254,7 @@ fetchPosts();
 import {
   getComments,
   getComment,
+  createComment,
   patchComment,
   putComment,
   deleteComment,
@@ -309,6 +313,7 @@ fetchComments();
 import {
   getBooks,
   getBook,
+  createBook,
   patchBook,
   putBook,
   deleteBook,
@@ -365,6 +370,7 @@ fetchBooks();
 import {
   getReviews,
   getReview,
+  createReview,
   patchReview,
   putReview,
   deleteReview,
