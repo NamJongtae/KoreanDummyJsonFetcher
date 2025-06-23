@@ -18,12 +18,7 @@ export async function fetcher<T>(
     headers?: Record<string, string>;
   }
 ): Promise<T> {
-  const {
-    method = "GET",
-    params,
-    body,
-    headers,
-  } = options || {};
+  const { method = "GET", params, body, headers } = options || {};
   const url = `${BASE_URL}${endpoint}${buildQuery(params)}`;
   const res = await fetch(url, {
     method,
@@ -34,7 +29,10 @@ export async function fetcher<T>(
     body: body ? JSON.stringify(body) : undefined,
   });
   if (!res.ok) {
-    throw new Error(`API 요청 실패: ${res.status} ${res.statusText}`);
+    const result = await res.json();
+    throw new Error(
+      `API 요청 실패: ${res.status} ${res.statusText} - ${result.message}`
+    );
   }
   return res.json();
 }
