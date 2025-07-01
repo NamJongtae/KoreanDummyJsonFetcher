@@ -6,3 +6,4 @@ export * from "./books";
 export * from "./reviews";
 export * from "./auth";
 export * from "./image";
+export * from "./lorem";
