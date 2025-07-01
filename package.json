@@ -1,6 +1,6 @@
 {
   "name": "korean-dummy-json-fetcher",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "한국어 더미 데이터 생성 라이브러리",
   "keywords": [
     "korean",
@@ -9,10 +9,17 @@
     "dummy-json",
     "dummy-json-korean",
     "korean-dummy-json",
+    "lorem",
+    "lorem-ipsum",
+    "lorem-ipsum-korean",
+    "korean-lorem-ipsum",
     "한국어",
     "한글",
     "더미",
-    "더미데이터"
+    "더미데이터",
+    "한글 로렘 입숨",
+    "한글 로렘",
+    "한글 입숨"
   ],
   "author": "JongTae Nam <dark9737@gmail.com>",
   "license": "MIT",
