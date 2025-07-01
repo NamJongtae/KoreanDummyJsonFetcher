@@ -22,6 +22,7 @@
 - 페이지네이션 기능을 지원합니다.
 - **GET뿐 아니라 테스트 모킹용 PATCH, PUT, POST, DELETE 등 CRUD API를 지원합니다.**
 - **토큰 인증(Auth), 동적 이미지 생성(Image) API를 지원합니다.**
+- **한글 로렘 입숨 생성 API를 지원합니다.**
 - TypeScript를 지원합니다.(타입 정의 포함)
 - ESM/CJS를 모두 지원합니다.
 - **비동기 fetch 작업 없이 바로 더미 데이터 반환합니다.**
@@ -42,7 +43,7 @@
 
 ## Resources
 
-아래 8개의 리소스를 제공합니다.
+아래 9개의 리소스를 제공합니다.
 
 | Resource | Information         |
 | -------- | ------------------- |
@@ -54,11 +55,23 @@
 | reviews  | 리뷰 500개          |
 | auth     | 로그인 및 인증/인가 |
 | image    | 동적 이미지 생성    |
+| lorem    | 한글 로렘 입숨 생성 |
 
 ## Installing
 
+### npm
 ```bash
 npm install korean-dummy-json-fetcher
+```
+
+### yarn
+```bash
+yarn add korean-dummy-json-fetcher
+```
+
+### pnpm
+```bash
+pnpm add korean-dummy-json-fetcher
 ```
 
 ## CDN
@@ -66,13 +79,13 @@ npm install korean-dummy-json-fetcher
 ### unpkg
 
 ```html
-<script src="https://unpkg.com/korean-dummy-json-fetcher@1.0.8/dist/index.min.js"></script>
+<script src="https://unpkg.com/korean-dummy-json-fetcher@1.1.0/dist/index.min.js"></script>
 ```
 
 ### jsdelivr
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/korean-dummy-json-fetcher@1.0.8/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/korean-dummy-json-fetcher@1.1.0/dist/index.min.js"></script>
 ```
 
 ## Usage
@@ -472,83 +485,93 @@ const image = getImage({
 console.log(image);
 ```
 
+### Lorem
+
+```ts
+import { getLorem } from "korean-dummy-json-fetcher";
+
+// 한글 로렘 입숨 생성하기
+async function fetchLorem() {
+  const lorem = await getLorem({
+    mode: "p",
+    count: 2,
+    legnth: 200,
+  });
+  console.log(lorem);
+}
+
+fetchLorem();
+```
+
 ## API Reference
 
 ### Users
 
-- `getUser({ id })` : 특정 유저 정보 반환
-- `getUsers()` : 유저 전체 목록 반환
-- `getUsers({ limit, page })` : 유저 목록 페이지네이션 반환
-- `createUser(data)` : 유저 생성
-- `patchUser(id, data)` : 유저 일부 수정
-- `putUser(id, data)` : 유저 전체 수정
-- `deleteUser({ id })` : 유저 삭제
+- `getUser({ id }: { id: number })` : 특정 유저 정보 반환
+- `getUsers({ limit?, page? }?: { limit?: number; page?: number })` : 유저 전체 목록 반환
+- `createUser(data: Omit<User, "id" | "createdAt">)` : 유저 생성
+- `patchUser(id: number, data: Partial<Omit<User, "id" | "createdAt">>)` : 유저 일부 수정
+- `putUser(id: number, data: Omit<User, "id" | "createdAt">)` : 유저 전체 수정
+- `deleteUser({ id }: { id: number })` : 유저 삭제
 
 ### Todos
 
-- `getTodo({ id })` : 특정 할 일 정보 반환
-- `getTodos({ userId })` : 특정 유저 할 일 목록 반환
-- `getTodos()` : 유저 전체 목록 반환
-- `getTodos({ limit, page })` : 할 일 목록 페이지네이션 반환
-- `createTodo(data)` : 할 일 생성
-- `patchTodo(id, data)` : 할 일 일부 수정
-- `putTodo(id, data)` : 할 일 전체 수정
-- `deleteTodo({ id })` : 할 일 삭제
+- `getTodo({ id }: { id: number })` : 특정 할 일 정보 반환
+- `getTodos({ userId?, limit?, page? }?: { userId?: number; limit?: number; page?: number })` : 할 일 목록 반환
+- `createTodo(data: Omit<Todo, "id">)` : 할 일 생성
+- `patchTodo(id: number, data: Partial<Omit<Todo, "id">>)` : 할 일 일부 수정
+- `putTodo(id: number, data: Omit<Todo, "id">)` : 할 일 전체 수정
+- `deleteTodo({ id }: { id: number })` : 할 일 삭제
 
 ### Posts
 
-- `getPost({ id })` : 특정 게시글 정보 반환
-- `getPosts({ limit, page })` : 게시글 목록 페이지네이션 반환
-- `getPosts()` : 전체 게시글 목록 반환
-- `getPosts({ userId })` : 특정 유저 게시글 목록 반환
-- `createPost(data)` : 게시글 생성
-- `patchPost(id, data)` : 게시글 일부 수정
-- `putPost(id, data)` : 게시글 전체 수정
-- `deletePost({ id })` : 게시글 삭제
+- `getPost({ id }: { id: number })` : 특정 게시글 정보 반환
+- `getPosts({ userId?, limit?, page? }?: { userId?: number; limit?: number; page?: number })` : 게시글 목록 반환
+- `createPost(data: Omit<Post, "id" | "createdAt">)` : 게시글 생성
+- `patchPost(id: number, data: Partial<Omit<Post, "id" | "userId" | "createdAt">>)` : 게시글 일부 수정
+- `putPost(id: number, data: Omit<Post, "id" | "userId" | "createdAt">)` : 게시글 전체 수정
+- `deletePost({ id }: { id: number })` : 게시글 삭제
 
 ### Comments
 
-- `getComment({ id })` : 특정 댓글 정보 반환
-- `getComments()` : 전체 댓글 목록 반환
-- `getComments({ limit, page })` : 댓글 목록 페이지네이션 반환
-- `getComments({ userId })` : 특정 유저 댓글 목록 반환
-- `getComments({ postId })` : 특정 게시물 댓글 목록 반환
-- `createComment(data)` : 댓글 생성
-- `patchComment(id, data)` : 댓글 일부 수정
-- `putComment(id, data)` : 댓글 전체 수정
-- `deleteComment({ id })` : 댓글 삭제
+- `getComment({ id }: { id: number })` : 특정 댓글 정보 반환
+- `getComments({ userId?, postId?, limit?, page? }?: { userId?: number; postId?: number; limit?: number; page?: number })` : 댓글 목록 반환
+- `createComment(data: Omit<Comment, "id" | "createdAt">)` : 댓글 생성
+- `patchComment(id: number, data: Partial<Omit<Comment, "id" | "userId" | "postId" | "createdAt">>)` : 댓글 일부 수정
+- `putComment(id: number, data: Omit<Comment, "id" | "userId" | "postId" | "createdAt">)` : 댓글 전체 수정
+- `deleteComment({ id }: { id: number })` : 댓글 삭제
 
 ### Books
 
-- `getBook({ id })` : 특정 책 정보 반환
-- `getBooks()` : 전체 책 목록 반환
-- `getBooks({ limit, page })` : 책 목록 페이지네이션 반환
-- `createBook(data)` : 책 생성
-- `patchBook(id, data)` : 책 일부 수정
-- `putBook(id, data)` : 책 전체 수정
-- `deleteBook({ id })` : 책 삭제
+- `getBook({ id }: { id: number })` : 특정 책 정보 반환
+- `getBooks({ limit?, page? }?: { limit?: number; page?: number })` : 책 목록 반환
+- `createBook(data: Omit<Book, "id" | "createdAt">)` : 책 생성
+- `patchBook(id: number, data: Partial<Omit<Book, "id" | "createdAt">>)` : 책 일부 수정
+- `putBook(id: number, data: Omit<Book, "id" | "createdAt">)` : 책 전체 수정
+- `deleteBook({ id }: { id: number })` : 책 삭제
 
 ### Reviews
 
-- `getReview({ id })` : 특정 리뷰 반환
-- `getReviews({ userId })` : 특정 유저 리뷰 목록 반환
-- `getReviews({ bookId })` : 특정 책 리뷰 목록 반환
-- `getReviews()` : 전체 리뷰 목록 반환
-- `getReviews({ limit, page })` : 리뷰 목록 페이지네이션 반환
-- `createReview(data)` : 리뷰 생성
-- `patchReview(id, data)` : 리뷰 일부 수정
-- `putReview(id, data)` : 리뷰 전체 수정
-- `deleteReview({ id })` : 리뷰 삭제
+- `getReview({ id }: { id: number })` : 특정 리뷰 반환
+- `getReviews({ userId?, bookId?, limit?, page? }?: { userId?: number; bookId?: number; limit?: number; page?: number })` : 리뷰 목록 반환
+- `createReview(data: Omit<Review, "id" | "createdAt">)` : 리뷰 생성
+- `patchReview(id: number, data: Partial<Omit<Review, "id" | "userId" | "bookId" | "createdAt">>)` : 리뷰 일부 수정
+- `putReview(id: number, data: Omit<Review, "id" | "userId" | "bookId" | "createdAt">)` : 리뷰 전체 수정
+- `deleteReview({ id }: { id: number })` : 리뷰 삭제
 
 ### Auth
 
-- `login({ id, password, ATExp?, RTExp? })`: 로그인 후 `accessToken`과 `refreshToken`을 반환합니다.
-- `getAuthUser({ accessToken })`: `accessToken`으로 유저 정보를 조회합니다.
-- `refreshAccessToken({ refreshToken })`: `refreshToken`으로 `accessToken`을 재발급합니다.
+- `login({ id, password, ATExp?, RTExp? }: { id: string; password: string; ATExp?: number; RTExp?: number })`: 로그인 후 `accessToken`과 `refreshToken`을 반환
+- `getAuthUser({ accessToken }: { accessToken?: string })`: `accessToken`으로 유저 정보를 조회
+- `refreshAccessToken({ refreshToken }: { refreshToken?: string })`: `refreshToken`으로 `accessToken`을 재발급
 
 ### Image
 
-- `getImage({ size?, bgColor?, text?, ext?, textColor? })`: 동적 이미지를 반환합니다.
+- `getImage({ size?, bgColor?, text?, ext?, textColor? }?: { size?: string; bgColor?: string; text?: string; ext?: "jpg" | "jpeg" | "png" | "svg"; textColor?: string })`: 동적 이미지 반환
+
+### Lorem
+
+- `getLorem({ mode?, count?, length? }?: { mode?: "p" | "s" | "w"; count?: number; length?: number })`: 한글 로렘 입숨 반환
 
 ## Type Definitions Example
 
@@ -614,6 +637,10 @@ export interface Login {
 
 export interface RefreshAccessToken {
   accessToken: string;
+}
+
+export interface GetLoremResponse {
+  result: string;
 }
 
 export type ApiResponse<T = void, K extends string = never> = {
