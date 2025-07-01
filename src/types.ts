@@ -61,6 +61,10 @@ export interface RefreshAccessToken {
   accessToken: string;
 }
 
+export interface GetLoremResponse {
+  result: string;
+}
+
 export type ApiResponse<T = void, K extends string = never> = {
   message: string;
 } & {
