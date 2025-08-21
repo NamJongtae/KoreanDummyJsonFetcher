@@ -1,4 +1,4 @@
-const BASE_URL = "https://koreandummyjson.site/api";
+const BASE_URL = "https://koreandummyjson.vercel.app/";
 
 function buildQuery(params?: Record<string, any>): string {
   if (!params) return "";
