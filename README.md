@@ -17,8 +17,8 @@
 
 ## Notice
 
-도메인 변경으로 인해 **v1.1.1 이상 버전**을 사용해야 라이브러리가 정상적으로 동작합니다.  
-사용 전에 반드시 최신 버전으로 업데이트해주세요.
+도메인 변경으로 인해 **v1.1.2 이상 버전**을 사용해야 라이브러리가 정상적으로 동작합니다.  
+사용 전에 반드시 **v1.1.2 버전** 이상으로 업데이트해주세요.
 
 ## Features
 
@@ -87,13 +87,13 @@ pnpm add korean-dummy-json-fetcher
 ### unpkg
 
 ```html
-<script src="https://unpkg.com/korean-dummy-json-fetcher@1.1.1/dist/index.min.js"></script>
+<script src="https://unpkg.com/korean-dummy-json-fetcher@1.1.2/dist/index.min.js"></script>
 ```
 
 ### jsdelivr
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/korean-dummy-json-fetcher@1.1.1/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/korean-dummy-json-fetcher@1.1.2/dist/index.min.js"></script>
 ```
 
 ## Usage
