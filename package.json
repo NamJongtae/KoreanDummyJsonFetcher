@@ -1,6 +1,6 @@
 {
   "name": "korean-dummy-json-fetcher",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "한국어 더미 데이터 생성 라이브러리",
   "keywords": [
     "korean",
@@ -23,7 +23,7 @@
   ],
   "author": "JongTae Nam <dark9737@gmail.com>",
   "license": "MIT",
-  "homepage": "https://koreandummyjson.site",
+  "homepage": "https://koreandummyjson.vercel.app",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NamJongtae/KoreanDummyJsonFetcher.git"
