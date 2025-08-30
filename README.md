@@ -1,7 +1,7 @@
 # Korean Dummy JSON Fetcher
 
 <div align="center">
-   <a href="https://koreandummyjson.site"><img src="https://koreandummyjson.site/icons/logo-icon.svg" /></a><br>
+   <a href="https://koreandummyjson.site"><img src="https://koreandummyjson.vercel.app/icons/logo-icon.svg" /></a><br>
 
 [![npm version](https://img.shields.io/npm/v/korean-dummy-json-fetcher?style=flat)](https://www.npmjs.com/package/korean-dummy-json-fetcher)
 [![install size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=korean-dummy-json-fetcher&query=$.install.pretty&label=install%20size&style=flat)](https://packagephobia.com/result?p=korean-dummy-json-fetcher)
@@ -13,7 +13,7 @@
 
 **단순 데이터 조회뿐 아니라, PATCH, PUT, POST, DELETE 등 CRUD API도 모두 지원**하여 실제 REST API와 유사하게 테스트 및 개발에 활용할 수 있습니다.
 
-자세한 API별 사용법은 [DOCS](https://www.koreandummyjson.site/docs/users)를 참고해주세요.
+자세한 API별 사용법은 [DOCS](https://koreandummyjson.vercel.app/docs/users)를 참고해주세요.
 
 ## Notice
 
@@ -87,13 +87,13 @@ pnpm add korean-dummy-json-fetcher
 ### unpkg
 
 ```html
-<script src="https://unpkg.com/korean-dummy-json-fetcher@1.1.2/dist/index.min.js"></script>
+<script src="https://unpkg.com/korean-dummy-json-fetcher@1.1.3/dist/index.min.js"></script>
 ```
 
 ### jsdelivr
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/korean-dummy-json-fetcher@1.1.2/dist/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/korean-dummy-json-fetcher@1.1.3/dist/index.min.js"></script>
 ```
 
 ## Usage
